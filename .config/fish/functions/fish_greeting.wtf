@@ -1,0 +1,5 @@
+function fish_greeting
+	set_color yellow
+	links -dump http://bash.org/\?random1 | sed '/^\#/d' | sed '/Home/,/^\s*$/{d}' | sed '/^QDB Admin/d' | sed '/Hosted/,/^\s*$/{d}' | sed '1,/^\s*$/{/^\s*$/d}' | sed '/^\s*$/,$d'
+	set_color normal
+end
