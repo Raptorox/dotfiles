@@ -1,4 +1,4 @@
-function purge --wraps='yay -Yc' --description 'alias purge yay -Yc'
+function purge --wraps='pikaur -Rns (pikaur -Qtdq)' --description 'alias purge pikaur -Rns (pikaur -Qtdq)'
     pikaur -Rns (pikaur -Qtdq) $argv
 
 end
