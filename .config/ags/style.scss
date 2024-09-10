@@ -1,0 +1,27 @@
+window#bar > box {
+    padding-bottom: 4px;
+}
+
+.launcher {
+    font-family: 'Material Symbols Rounded';
+}
+
+.ws-button {
+    color: gray;
+
+    &.occupied {
+        color: white;
+    }
+
+    &.focused {
+        color: yellow;
+    }
+
+    &.urgent {
+        color: red;
+    }
+}
+
+.powermenu > * {
+    font-family: 'Material Symbols Rounded';
+}
