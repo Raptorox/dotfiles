@@ -1,5 +1,6 @@
-const hyprland = await Service.import('hyprland')
 import Variable from 'resource:///com/github/Aylur/ags/variable.js'
+const hyprland = await Service.import('hyprland')
+const systemtray = await Service.import('systemtray')
 
 const dispatch = ws => hyprland.messageAsync(`dispatch workspace ${ws}`)
 
@@ -13,6 +14,7 @@ const workspaces = Widget.EventBox({
                 id: i,
                 urgent: false
             },
+            vpack: 'center',
             label: `${i}`,
             class_name: 'ws-button',
             on_clicked: () => dispatch(i),
@@ -34,9 +36,23 @@ const workspaces = Widget.EventBox({
     })
 })
 
-const show_power = Variable(false)
+/** @param {import('types/service/systemtray').TrayItem} item */
+const SysTrayItem = item => Widget.Button({
+    class_name: 'systray-item',
+    child: Widget.Icon().bind('icon', item, 'icon'),
+    tooltip_markup: item.bind('tooltip_markup'),
+    on_primary_click: (_, event) => item.activate(event),
+    on_secondary_click: (_, event) => item.openMenu(event)
+})
 
-const powermenu = Widget.EventBox({
+const tray = Widget.Box({
+    class_name: 'systray',
+    children: systemtray.bind('items').as(i => i.map(SysTrayItem))
+})
+
+//const show_power = Variable(false)
+
+/*const powermenu = Widget.EventBox({
     on_hover: () => show_power.value = true,
     on_hover_lost: () => show_power.value = false,
     child: Widget.Box({
@@ -82,13 +98,13 @@ const powermenu = Widget.EventBox({
             })
         ]
     })
-})
+})*/
 
 const left = Widget.Box({
     hpack: 'start',
     children: [
         Widget.Button({
-            label: '',
+            child: Widget.Icon('hyprland.svg'),
             class_name: 'launcher',
             on_clicked: () => App.toggleWindow('launcher')
         }),
@@ -99,14 +115,17 @@ const left = Widget.Box({
 const center = Widget.Box({
     hpack: 'center',
     children: [
-        Widget.Label("")
+        Widget.Label({class_name: 'date'}).poll(1000, self => {
+            self.label = Utils.exec('date "+%H:%M - %a %d/%m"')
+        })
     ]
 })
 
 const right = Widget.Box({
     hpack: 'end',
     children: [
-        powermenu
+        tray,
+        //powermenu
     ]
 })
 

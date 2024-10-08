@@ -3,7 +3,7 @@
 # Base URL used to expand short topic names in the "ntfy publish" and "ntfy subscribe" commands.
 # If you self-host a ntfy server, you'll likely want to change this.
 #
-default-host: http://192.168.1.12
+default-host: https://ntfy.ra.pi/
 
 # Default credentials will be used with "ntfy publish" and "ntfy subscribe" if no other credentials are provided.
 # You can set a default token to use or a default user:password combination, but not both. For an empty password,

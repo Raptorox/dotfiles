@@ -1,27 +1,70 @@
-window#bar > box {
-    padding-bottom: 4px;
+window#bar {
+    background-color: transparent;
+    //background-color: #1E1E1E;
+
+    > box {
+        margin: 5pt 5pt;
+        border-radius: 20px;
+        padding: 4px;
+        background-color: #1E1E1E;
+    }
 }
 
 .launcher {
-    font-family: 'Material Symbols Rounded';
+    all: unset;
+    background-color: transparent;
+    margin: 0 8pt 0 12pt;
+    font-size: 1.5rem;
 }
 
 .ws-button {
-    color: gray;
+    font-size: 0;
+    min-width: 5pt;
+    min-height: 5pt;
+    border-radius: 20px;
+    padding: 3px;
+    margin-left: 10px;
+    background-color: #EEEEEE22;
+    transition: min-width .2s, min-height .1s;
 
     &.occupied {
-        color: white;
+        min-width: 7pt;
+        min-height: 7pt;
+        background-color: #7261A3;
     }
 
     &.focused {
-        color: yellow;
+        min-height: 12pt;
+        min-width: 20pt;
+        background-color: #A67DB8;
     }
 
     &.urgent {
-        color: red;
+        min-height: 14pt;
+        min-width: 24pt;
+        background-color: #CE6A85;
     }
 }
 
-.powermenu > * {
-    font-family: 'Material Symbols Rounded';
+.date {
+    font-size: 1.1rem;
+    font-family: 'JetBrains Mono Nerd Font';
+    font-weight: bold;
 }
+
+.systray {
+    padding: 4pt;
+    margin: 0 5pt;
+    border-radius: 20px;
+}
+
+.systray-item {
+    all: unset;
+    background-color: transparent;
+    margin: 0 5pt 0 4pt;
+    font-size: 1.3rem;
+}
+
+/*.powermenu > * {
+    font-family: 'Material Symbols Rounded';
+}*/
