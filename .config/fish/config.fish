@@ -8,6 +8,7 @@ set -x EDITOR nvim
 fish_add_path /home/raptorox/.deno/bin /home/raptorox/.local/bin
 
 starship init fish | source
+fzf --fish | source
 
 fish_ssh_agent
 
