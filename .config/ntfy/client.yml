@@ -56,4 +56,4 @@ default-host: https://ntfy.ra.pi/
 #
 subscribe:
   - topic: raptorox
-    command: 'notify-send -a "ntfy: $topic" -i /usr/share/icons/ntfy.svg -t 5000 "$t" "$m"'
+    command: 'notify-send -a "ntfy: $topic" -i /usr/share/icons/ntfy.png -t 5000 "$t " "$m "'
