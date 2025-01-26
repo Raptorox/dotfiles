@@ -17,9 +17,9 @@ method = ncurses
 orientation = bottom
 channels = stereo
 
-[color]
+# [color]
 
-gradient = 1
+; gradient = 1
 ; gradient_count = 8
 ; gradient_color_1 = '#59cc33'
 ; gradient_color_2 = '#80cc33'
@@ -30,12 +30,24 @@ gradient = 1
 ; gradient_color_7 = '#cc5933'
 ; gradient_color_8 = '#cc3333'
 
+[color]
+gradient = 1
+
+gradient_color_1 = '#8bd5ca'
+gradient_color_2 = '#91d7e3'
+gradient_color_3 = '#7dc4e4'
+gradient_color_4 = '#8aadf4'
+gradient_color_5 = '#c6a0f6'
+gradient_color_6 = '#f5bde6'
+gradient_color_7 = '#ee99a0'
+gradient_color_8 = '#ed8796'
+
 [smoothing]
 
 # Noise reduction, int 0 - 100. default 77
 # the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
 # 100 will be very slow and smooth, 0 will be fast but noisy.
-noise_reduction = 77
+; noise_reduction = 77
 
 [eq]
 
