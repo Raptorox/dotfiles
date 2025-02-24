@@ -13,3 +13,6 @@ fzf --fish | source
 fish_ssh_agent
 
 abbr snvim 's -E nvim'
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/raptorox/.lmstudio/bin
