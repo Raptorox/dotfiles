@@ -5,5 +5,9 @@ export QT_QPA_PALTFORMTHEME=qt6ct
 export CLUTTER_BACKEND=wayland
 export ELECTRON_OZONE_PLATFORM_HINT=auto
 
+export LIBVA_DRIVER_NAME=radeonsi
+export VDPAU_DRIVER=radeonsi
+export RADV_PERFTEST=video_decode,video_encode
+
 export XCURSOR_THEME=Bibata-Modern-Ice
 export XCURSOR_SIZE=24
