@@ -8,11 +8,12 @@ set -x EDITOR nvim
 fish_add_path /home/raptorox/.deno/bin /home/raptorox/.local/bin
 
 starship init fish | source
-fzf --fish | source
+#fzf --fish | source
+atuin init fish --disable-up-arrow | source
+
+#fabric completions fish | source
+fj completion fish | source
 
 fish_ssh_agent
 
-abbr snvim 's -E nvim'
-
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /home/raptorox/.lmstudio/bin
+abbr snvim 's nvim'
